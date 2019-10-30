@@ -12,7 +12,7 @@
       <span class="medium" v-if="work.medium">({{ work.medium }})</span>
     </p>
     <p>{{ work.creditline }}</p>
-    <img :src="work_image" :alt="work.title" />
+    <img :src="work.iiif" :alt="work.title" />
   </div>
 </template>
 

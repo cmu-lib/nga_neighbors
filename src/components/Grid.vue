@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     info_url() {
-      return "http://localhost:8081/grids/" + this.grid.id + "/info.json";
+      return "http://localhost:8080/grids/" + this.grid.id + "/info.json";
     },
     grid() {
       return this.grids.filter(x => x.id == this.id)[0];
