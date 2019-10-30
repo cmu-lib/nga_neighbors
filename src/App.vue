@@ -1,15 +1,5 @@
 <template>
-  <b-container>
-    <b-navbar toggleable="lg" type="dark" variant="secondary">
-      <b-navbar-brand href="/">National Neighbors</b-navbar-brand>
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item>Paintings</b-nav-item>
-          <b-nav-item>Prints & Drawings</b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
+  <b-container fluid class="mx-0">
     <router-view />
     <nav class="navbar sticky-bottom navbar-dark bg-secondary">
       <b-navbar-nav>

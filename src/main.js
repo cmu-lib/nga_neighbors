@@ -13,19 +13,14 @@ Vue.use(AsyncComputed)
 
 Vue.config.productionTip = false
 
-Vue.prototype.$APIConstants = {
-  REST_PAGE_SIZE: 100,
-  BOOK_PAGE_SIZE: 25,
-  API_LOGIN: "/api/auth/login/?next=/",
-  API_LOGOUT: "/api/auth/logout/?next=/",
-}
-
 import Home from "./components/Home"
 import Work from "./components/Work"
+import Grid from "./components/Grid"
 
 const routes = [
   { path: "/", name: "Home", component: Home },
-  { path: "/work/:id", name: "WorkView", component: Work, props: (route) => ({ id: route.params.id }) }
+  { path: "/work/:id", name: "WorkView", component: Work, props: (route) => ({ id: route.params.id }) },
+  { path: "/grid/:id", name: "GridView", component: Grid, props: (route) => ({ id: route.params.id }) }
 ]
 
 const router = new VueRouter({
@@ -34,7 +29,7 @@ const router = new VueRouter({
 })
 
 export const HTTP = axios.create({
-  baseURL: "http://localhost:8080"
+  baseURL: "http://localhost:8081"
 })
 
 new Vue({
