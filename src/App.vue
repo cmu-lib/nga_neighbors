@@ -5,11 +5,13 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item>Paintings</b-nav-item>
+          <b-nav-item>
+            <RandomWorkButton :works="works" />
+          </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <router-view />
+    <router-view :works="works" :grids="grids" />
     <nav class="navbar sticky-bottom navbar-dark bg-secondary">
       <b-navbar-nav>
         <b-nav-text>
@@ -26,10 +28,37 @@
 </template>
 
 <script>
+import { HTTP } from "./main";
+import RandomWorkButton from "./components/RandomWorkButton";
+
 export default {
   name: "app",
+  components: {
+    RandomWorkButton
+  },
   data() {
-    return {};
+    return {
+      works: [],
+      grids: []
+    };
+  },
+  created() {
+    HTTP.get("/manifest.json").then(
+      response => {
+        this.works = response.data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+    HTTP.get("/grids/images.json").then(
+      response => {
+        this.grids = response.data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 };
 </script>

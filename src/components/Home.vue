@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="my-2">
     <b-list-group v-if="grids">
       <b-list-group-item v-for="grid in grids" :key="grid.id">
         <router-link :to="{name: 'GridView', params: {id: grid.id}}">{{ grid.title }}</router-link>
@@ -23,13 +23,16 @@
 </template>
 
 <script>
-import { HTTP } from "../main";
 import RandomWorkButton from "./RandomWorkButton";
 
 export default {
   name: "Home",
   components: {
     RandomWorkButton
+  },
+  props: {
+    works: Array,
+    grids: Array
   },
   data() {
     return {
@@ -55,28 +58,6 @@ export default {
       } else {
         return null;
       }
-    }
-  },
-  asyncComputed: {
-    works() {
-      return HTTP.get("/manifest.json").then(
-        response => {
-          return response.data;
-        },
-        error => {
-          console.log(error);
-        }
-      );
-    },
-    grids() {
-      return HTTP.get("/grids/images.json").then(
-        response => {
-          return response.data;
-        },
-        error => {
-          console.log(error);
-        }
-      );
     }
   }
 };

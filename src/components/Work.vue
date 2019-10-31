@@ -39,7 +39,9 @@ export default {
     WorkPreview
   },
   props: {
-    id: String
+    id: String,
+    works: Array,
+    grids: Array
   },
   data() {
     return { neighbors: [] };

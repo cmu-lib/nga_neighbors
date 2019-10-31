@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { HTTP } from "../main";
 import IIIF from "./IIIF";
 
 export default {
@@ -18,12 +17,12 @@ export default {
     IIIF
   },
   props: {
-    id: String
+    id: String,
+    works: Array,
+    grids: Array
   },
   data() {
-    return {
-      grids: []
-    };
+    return {};
   },
   computed: {
     info_url() {
@@ -32,16 +31,6 @@ export default {
     grid() {
       return this.grids.filter(x => x.id == this.id)[0];
     }
-  },
-  mounted() {
-    HTTP.get("/grids/images.json").then(
-      response => {
-        this.grids = response.data;
-      },
-      error => {
-        console.log(error);
-      }
-    );
   }
 };
 </script>
