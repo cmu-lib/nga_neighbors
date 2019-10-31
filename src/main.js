@@ -16,20 +16,27 @@ Vue.config.productionTip = false
 import Home from "./components/Home"
 import Work from "./components/Work"
 import Grid from "./components/Grid"
+import About from "./components/About"
 
 const routes = [
   { path: "/", name: "Home", component: Home },
+  { path: "/about", name: "About", component: About },
   { path: "/work/:id", name: "WorkView", component: Work, props: (route) => ({ id: route.params.id }) },
   { path: "/grid/:id", name: "GridView", component: Grid, props: (route) => ({ id: route.params.id }) }
 ]
 
+export const base = "https://dh-web.hss.cmu.edu/"
+export const subpath = "nga"
+
 const router = new VueRouter({
   mode: 'history',
+  base: subpath,
   routes: routes
 })
 
+
 export const HTTP = axios.create({
-  baseURL: "http://localhost:8080"
+  baseURL: base
 })
 
 new Vue({

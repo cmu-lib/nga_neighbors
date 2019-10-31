@@ -1,10 +1,7 @@
 <template>
   <b-container class="my-2">
-    <b-list-group v-if="grids">
-      <b-list-group-item v-for="grid in grids" :key="grid.id">
-        <router-link :to="{name: 'GridView', params: {id: grid.id}}">{{ grid.title }}</router-link>
-      </b-list-group-item>
-    </b-list-group>
+    <h1>Browse individual works</h1>
+    <p>Look up an individual work from the NGA, or hop to one at ranodm, to see what it's nearest visual neighbors are.</p>
     <b-form-group
       id="accno_group"
       label-for="accno_input"
@@ -19,6 +16,19 @@
       </b-input-group>
     </b-form-group>
     <RandomWorkButton :works="works" />
+    <hr />
+    <h1>Get the big picture</h1>
+    <p>Explore visualizations of the entire NGA paintings and prints collection in context with other sibling collections.</p>
+    <b-list-group v-if="grids">
+      <b-list-group-item v-for="grid in grids" :key="grid.id">
+        <b-media>
+          <template v-slot:aside>
+            <b-img :src="grid.thumb" width="500" :alt="grid.title" />
+          </template>
+          <router-link :to="{name: 'GridView', params: {id: grid.id}}">{{ grid.title }}</router-link>
+        </b-media>
+      </b-list-group-item>
+    </b-list-group>
   </b-container>
 </template>
 

@@ -1,12 +1,12 @@
 <template>
-  <div v-if="work">
+  <b-container v-if="work">
     <b-row>
       <b-col cols="6">
-        <h3>{{ work.accessionnum }}</h3>
-        <p>
-          {{ work.attribution }},
+        <h2>
           <em>{{ work.title }}</em>
-        </p>
+        </h2>
+        <h3>{{ work.attribution }}</h3>
+        <p>{{ work.accessionnum }}</p>
         <p>
           <span class="dating" v-if="work.displaydate">{{ work.displaydate }}</span>
         </p>
@@ -26,7 +26,7 @@
         <img :src="work.iiif" :alt="work.title" />
       </b-col>
     </b-row>
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -48,7 +48,7 @@ export default {
   },
   asyncComputed: {
     work() {
-      return HTTP.get("/works/" + this.id + ".json").then(
+      return HTTP.get("/data/nga/work/" + this.id + ".json").then(
         response => {
           return response.data;
         },
@@ -59,9 +59,6 @@ export default {
     }
   },
   computed: {
-    work_image() {
-      return "http://localhost:8000/images/" + this.work.filepath;
-    },
     web_url() {
       return (
         "https://www.nga.gov/collection/art-object-page." +

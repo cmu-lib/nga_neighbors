@@ -10,6 +10,7 @@
 
 <script>
 import IIIF from "./IIIF";
+import { base } from "../main";
 
 export default {
   name: "Grid",
@@ -26,7 +27,7 @@ export default {
   },
   computed: {
     info_url() {
-      return "http://localhost:8080/grids/" + this.grid.id + "/info.json";
+      return base + "/iiif/" + this.grid.id + "/info.json";
     },
     grid() {
       return this.grids.filter(x => x.id == this.id)[0];

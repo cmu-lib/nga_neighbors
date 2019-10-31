@@ -4,6 +4,7 @@
 
 <script>
 import OpenSeadragon from "openseadragon";
+import subpath from "../main";
 export default {
   name: "IIIF",
   props: {
@@ -23,7 +24,7 @@ export default {
     options() {
       return {
         id: this.id,
-        prefixUrl: "/osd/",
+        prefixUrl: "/nga/osd/",
         tileSources: this.info_url
       };
     }

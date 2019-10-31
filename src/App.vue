@@ -1,13 +1,14 @@
 <template>
   <b-container fluid>
     <b-navbar toggleable="lg" type="dark" variant="secondary">
-      <b-navbar-brand href="/">National Neighbors</b-navbar-brand>
+      <b-navbar-brand :to="{name: 'Home'}">National Neighbors</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item>
             <RandomWorkButton :works="works" />
           </b-nav-item>
+          <b-nav-item :to="{name: 'About'}">About</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -21,7 +22,7 @@
         </b-nav-text>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="https://github.com/cmu-lib/pp-vue">GitHub</b-nav-item>
+        <b-nav-item href="https://github.com/cmu-lib/nga_neighbors">GitHub</b-nav-item>
       </b-navbar-nav>
     </nav>
   </b-container>
@@ -43,7 +44,7 @@ export default {
     };
   },
   created() {
-    HTTP.get("/manifest.json").then(
+    HTTP.get("/data/nga/manifest.json").then(
       response => {
         this.works = response.data;
       },
@@ -51,7 +52,7 @@ export default {
         console.log(error);
       }
     );
-    HTTP.get("/grids/images.json").then(
+    HTTP.get("/data/nga/images.json").then(
       response => {
         this.grids = response.data;
       },
