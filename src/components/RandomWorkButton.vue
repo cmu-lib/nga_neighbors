@@ -1,0 +1,24 @@
+<template>
+  <b-button variant="primary" @click="random_object">I'm feeling lucky!</b-button>
+</template>
+
+<script>
+export default {
+  name: "RandomWorkButton",
+  props: {
+    works: Array
+  },
+  methods: {
+    getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    },
+    goto_object() {
+      this.$router.push({ name: "WorkView", params: { id: this.accno } });
+    },
+    random_object() {
+      const rand_accno = this.works[this.getRandomInt(this.works.length - 1)];
+      this.$router.push({ name: "WorkView", params: { id: rand_accno } });
+    }
+  }
+};
+</script>

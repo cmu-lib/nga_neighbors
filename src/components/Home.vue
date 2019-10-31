@@ -18,22 +18,34 @@
         </b-input-group-append>
       </b-input-group>
     </b-form-group>
+    <RandomWorkButton :works="works" />
   </b-container>
 </template>
 
 <script>
 import { HTTP } from "../main";
+import RandomWorkButton from "./RandomWorkButton";
 
 export default {
   name: "Home",
+  components: {
+    RandomWorkButton
+  },
   data() {
     return {
       accno: null
     };
   },
   methods: {
+    getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    },
     goto_object() {
       this.$router.push({ name: "WorkView", params: { id: this.accno } });
+    },
+    random_object() {
+      const rand_accno = this.works[this.getRandomInt(this.works.length - 1)];
+      this.$router.push({ name: "WorkView", params: { id: rand_accno } });
     }
   },
   computed: {
