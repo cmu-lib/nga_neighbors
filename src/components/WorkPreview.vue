@@ -1,8 +1,13 @@
 <template>
   <b-list-group-item v-if="work">
-    <router-link
-      :to="{name: 'WorkView', params: {id: work.accessionnum}}"
-    >{{work.accessionnum}} - {{ work.title }}</router-link>
+    <b-media>
+      <template v-slot:aside>
+        <b-img :src="thumbnail" width="64" :alt="work.title" />
+      </template>
+      <router-link
+        :to="{name: 'WorkView', params: {id: work.accessionnum}}"
+      >{{work.accessionnum}} - {{ work.title }}</router-link>
+    </b-media>
   </b-list-group-item>
 </template>
 
@@ -23,6 +28,11 @@ export default {
           console.log(error);
         }
       );
+    }
+  },
+  computed: {
+    thumbnail() {
+      return this.work.iiif.replace("!800,800", "!64,64");
     }
   }
 };

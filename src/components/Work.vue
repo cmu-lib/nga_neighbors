@@ -14,6 +14,9 @@
           <span class="medium" v-if="work.medium">({{ work.medium }})</span>
         </p>
         <p>{{ work.creditline }}</p>
+        <p>
+          <a :href="web_url">See this work at the NGA website</a>
+        </p>
         <h4>Nearest visual neighbors</h4>
         <b-list-group>
           <WorkPreview v-for="nn in work.neighbors" :key="nn" :id="nn" />
@@ -56,6 +59,13 @@ export default {
   computed: {
     work_image() {
       return "http://localhost:8000/images/" + this.work.filepath;
+    },
+    web_url() {
+      return (
+        "https://www.nga.gov/collection/art-object-page." +
+        this.work.objectid +
+        ".html"
+      );
     }
   }
 };
