@@ -5,11 +5,19 @@
         <router-link :to="{name: 'GridView', params: {id: grid.id}}">{{ grid.title }}</router-link>
       </b-list-group-item>
     </b-list-group>
-    <b-list-group v-if="works">
-      <b-list-group-item v-for="work in works" :key="work">
-        <router-link :to="{name: 'WorkView', params: {id: work}}">{{ work }}</router-link>
-      </b-list-group-item>
-    </b-list-group>
+    <b-form-group
+      id="accno_group"
+      label-for="accno_input"
+      label="Accession number"
+      description="Enter accession number to view object and its nearest neighbors"
+    >
+      <b-input-group>
+        <b-form-input v-model="accno" id="accno_input" :state="valid_accno" />
+        <b-input-group-append>
+          <b-button v-show="valid_accno" variant="outline-success" @click="goto_object">Go to object</b-button>
+        </b-input-group-append>
+      </b-input-group>
+    </b-form-group>
   </b-container>
 </template>
 
@@ -18,6 +26,25 @@ import { HTTP } from "../main";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      accno: null
+    };
+  },
+  methods: {
+    goto_object() {
+      this.$router.push({ name: "WorkView", params: { id: this.accno } });
+    }
+  },
+  computed: {
+    valid_accno() {
+      if (!!this.accno) {
+        return this.works.indexOf(this.accno) >= 0;
+      } else {
+        return null;
+      }
+    }
+  },
   asyncComputed: {
     works() {
       return HTTP.get("/manifest.json").then(
