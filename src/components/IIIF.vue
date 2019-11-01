@@ -4,7 +4,6 @@
 
 <script>
 import OpenSeadragon from "openseadragon";
-import subpath from "../main";
 export default {
   name: "IIIF",
   props: {

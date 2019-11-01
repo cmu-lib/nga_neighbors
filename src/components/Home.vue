@@ -1,7 +1,7 @@
 <template>
-  <b-container class="my-2">
+  <b-container class="my-3">
     <h1>Browse individual works</h1>
-    <p>Look up an individual work from the NGA, or hop to one at ranodm, to see what it's nearest visual neighbors are.</p>
+    <p>Look up an individual work from the NGA, or hop to one at random, to see what its nearest visual neighbors are.</p>
     <b-form-group
       id="accno_group"
       label-for="accno_input"
@@ -23,7 +23,7 @@
       <b-list-group-item v-for="grid in grids" :key="grid.id">
         <b-media>
           <template v-slot:aside>
-            <b-img :src="grid.thumb" width="500" :alt="grid.title" />
+            <b-img :src="grid.thumb" width="200" :alt="grid.title" />
           </template>
           <router-link :to="{name: 'GridView', params: {id: grid.id}}">{{ grid.title }}</router-link>
         </b-media>

@@ -1,24 +1,27 @@
 <template>
-  <b-container fluid>
-    <b-navbar toggleable="lg" type="dark" variant="secondary">
+  <b-container fluid class="p-0">
+    <b-navbar toggleable="lg" variant="dark" type="dark">
       <b-navbar-brand :to="{name: 'Home'}">National Neighbors</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item>
-            <RandomWorkButton :works="works" />
-          </b-nav-item>
           <b-nav-item :to="{name: 'About'}">About</b-nav-item>
+        </b-navbar-nav>
+        <b-navbar-nav>
+          <b-nav-form>
+            <RandomWorkButton :works="works" />
+          </b-nav-form>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
     <router-view :works="works" :grids="grids" />
-    <nav class="navbar sticky-bottom navbar-dark bg-secondary">
+    <nav class="navbar sticky-bottom">
       <b-navbar-nav>
         <b-nav-text>
           ©
-          <a href="https://library.cmu.edu">Carnegie Mellon University Libraries</a> 2019. Built by
-          <a href="https://matthewlincoln.net">Matthew Lincoln</a>.
+          <a href="https://library.cmu.edu">Carnegie Mellon University Libraries</a> 2019. Site built by
+          <a href="https://matthewlincoln.net">Matthew Lincoln</a>. Visualizations and data by Sarah Reiff Conell, Lingdong Huang, Golan Levin, and Matthew Lincoln
+          <router-link :to="{name: 'About'}">(read more)</router-link>
         </b-nav-text>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
@@ -63,6 +66,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

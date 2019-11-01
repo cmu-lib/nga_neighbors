@@ -1,11 +1,11 @@
 <template>
-  <div v-if="grid">
-    <h1>{{ grid.title }}</h1>
+  <b-container fluid class="my-4 p-0" v-if="grid">
+    <h1 class="m-2">{{ grid.title }}</h1>
     <IIIF v-if="grid" :id="grid.id" :info_url="info_url" />
-    <b-container>
+    <b-container class="my-4">
       <p>{{ grid.description }}</p>
     </b-container>
-  </div>
+  </b-container>
 </template>
 
 <script>

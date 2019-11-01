@@ -1,29 +1,32 @@
 <template>
-  <b-container v-if="work">
+  <b-container v-if="work" class="my-4">
     <b-row>
-      <b-col cols="6">
-        <h2>
-          <em>{{ work.title }}</em>
-        </h2>
-        <h3>{{ work.attribution }}</h3>
-        <p>{{ work.accessionnum }}</p>
-        <p>
-          <span class="dating" v-if="work.displaydate">{{ work.displaydate }}</span>
-        </p>
-        <p>
-          <span class="medium" v-if="work.medium">({{ work.medium }})</span>
-        </p>
-        <p>{{ work.creditline }}</p>
-        <p>
-          <a :href="web_url">See this work at the NGA website</a>
-        </p>
-        <h4>Nearest visual neighbors</h4>
-        <b-list-group>
-          <WorkPreview v-for="nn in work.neighbors" :key="nn" :id="nn" />
-        </b-list-group>
+      <b-col xs="4">
+        <b-card>
+          <h2>
+            <em>{{ work.title }}</em>
+          </h2>
+          <h3>{{ work.attribution }}</h3>
+          <p>{{ work.accessionnum }}</p>
+          <p>
+            <span class="dating" v-if="work.displaydate">{{ work.displaydate }}</span>
+          </p>
+          <p>
+            <span class="medium" v-if="work.medium">({{ work.medium }})</span>
+          </p>
+          <p>{{ work.creditline }}</p>
+          <p>
+            <a :href="web_url">See this work at the NGA website</a>
+          </p>
+        </b-card>
+        <b-card header="Nearest visual neighbors" no-body class="my-2">
+          <b-list-group flush>
+            <WorkPreview v-for="nn in work.neighbors" :key="nn" :id="nn" />
+          </b-list-group>
+        </b-card>
       </b-col>
-      <b-col cols="6">
-        <img :src="work.iiif" :alt="work.title" />
+      <b-col xs="8">
+        <img :src="work.iiif" :alt="work.title" class="work_image" />
       </b-col>
     </b-row>
   </b-container>
@@ -69,3 +72,10 @@ export default {
   }
 };
 </script>
+
+<style>
+img.work_image {
+  max-width: 800px;
+  max-height: 800px;
+}
+</style>

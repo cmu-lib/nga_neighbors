@@ -1,5 +1,5 @@
 <template>
-  <b-button variant="primary" @click="random_object">I'm feeling lucky!</b-button>
+  <b-button variant="secondary" @click="random_object">I'm feeling lucky!</b-button>
 </template>
 
 <script>
