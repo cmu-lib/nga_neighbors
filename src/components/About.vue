@@ -1,35 +1,62 @@
 <template>
   <b-container class="my-4">
-    <h1>About this project</h1>
-    <p>On Friday, October 25, 2019 the National Gallery of Art in Washington, D.C.hosted a "data-thon" where multiple teams of art historians and data scientists worked with the museum's open collection data to study questions about the history and composition of the collections.</p>
-    <p>A joint team from Carnegie Mellon and the University of Pittsburgh used image features from a convolutional neural network to index the National Gallery of Art's images by visual similarity. This allowed the team to compare the visual distribution of different collections within the National Gallery, and with related parts of the Samuel H. Kress collection (distributed in museums around the country) as well as a portion of the Lessig Rosenwald collection (split between the National Gallery and the Library of Congress).</p>
-    <p>
-      Matthew Lincoln built this resulting website to exhibit some of the visualizations masterminded by Lingdon Huang and Golan Levin, as well as to provide a proof-of-concept tool for dispalying near visual neighbors of artworks across a museum. Because of time constraints, this tool currently only features selected images from teh National Gallery of Art, however th cocnept is applicable to wide arrays of collections, as we dmonstrate in our
-      <router-link
-        :to="{name: 'GridView', params: {id: 'kress_and_nga'}}"
-      >cross-institutional expllorations.</router-link>
-    </p>
-    <h2>Project Team</h2>
+    <h2 id="team">Project Team</h2>
     <ul>
-      <li>Sarah Reiff Conell (University of Pittsburgh, Department of History of Art and Architecture)</li>
-      <li>Lingdong Huang (Carnegie Mellon University, STUDIO for Creative Inquiry)</li>
-      <li>Golan Levin (Carnegie Mellon University, STUDIO for Creative Inquiry)</li>
-      <li>Matthew Lincoln (Carnegie Mellon University Libraries)</li>
+      <li>
+        <a href="http://sarahreiffconell.com/">Sarah Reiff Conell</a> (University of Pittsburgh, Department of History of Art and Architecture)
+      </li>
+      <li>
+        <a href="https://lingdong.works/">Lingdong Huang</a> (Carnegie Mellon University, STUDIO for Creative Inquiry)
+      </li>
+      <li>
+        <a href="http://www.flong.com/">Golan Levin</a> (Carnegie Mellon University, STUDIO for Creative Inquiry)
+      </li>
+      <li>
+        <a href="https://matthewlincoln.net">Matthew Lincoln</a> (Carnegie Mellon University Libraries)
+      </li>
     </ul>
-    <h2>Acknowledgements</h2>
+    <h2 id="about">Narrative</h2>
+    <p>On Friday, October 25, 2019 the National Gallery of Art in Washington, D.C.hosted a "data-thon" where multiple teams of art historians and data scientists worked with the museum's open collection data to study questions about the history and composition of the collections.</p>
+    <figure>
+      <img src="team_portrait.jpg" alt="Photograph of the project team at the NGA" />
+      <figcaption>Sarah Reiff Conell, Lingdong Huang, Matthew Lincoln, and Golan Levin at the National Gallery of Art, October 25, 2019</figcaption>
+    </figure>
+    <p>A joint team from Carnegie Mellon and the University of Pittsburgh used image features from a convolutional neural network to index the National Gallery of Art's images by visual similarity. This allowed the team to compare the visual distribution of different collections within the National Gallery, and with related parts of the Samuel H. Kress collection (distributed in museums around the country) as well as a portion of the Lessig Rosenwald collection (split between the National Gallery and the Library of Congress).</p>
+    <p>Matthew Lincoln built this resulting website to exhibit some of the visualizations masterminded by Lingdon Huang and Golan Levin, as well as to provide a proof-of-concept tool for dispalying near visual neighbors of artworks across a museum. Because of time constraints, the individual-work browsing tool currently only features selected images from the National Gallery of Art. Wowever the concept is applicable to wide arrays of collections.</p>
+    <p>
+      To see cross-institutional comparisons, see our image similarity montages
+      <router-link :to="{name: 'GridView', params: {id: 'kress_and_nga'}}">(example here)</router-link>&nbsp;where we combine views of both NGA artworks alongside selected images from the Kress Collection and the Library of Congress's Rosenwald Collection.
+    </p>
+    <h3 id="pipeline">Computer vision pipeline</h3>
+    <p>
+      Golan Levin and Lingdong Huang from CMU's STUDIO for Creative Inquiry spearheaded the visual indexing work. USing tools developed for similar projects with the
+      <a
+        href="https://cmoa.org/art/teenie-harris-archive/"
+      >Carnegie Museum of Art's Teenie Harris Archive</a>, Golan and Lingdong took the images that Sarah and I had assembled and began to calculate "features" from them: 2,048-number long lists produced by a convolutional neural network claled Inception-v3. This CNN is originally trained to identify objects in photographs; for example, to tag an image as depicting a "bicycle" or a "dog". The 2,048 dimensions it creates from an image are ones that have proven to be pretty good at accomplishing this task.
+    </p>
+    <p>Artistic similarity is about much more than discriminating which objects are on view in a work of art (if the artwork is even representational, which it often is not!). However, even though Inception-v3 would do a poor job at identifying useful art historical elements in these artworks, the work that it has to do along the way - building up internal models of color, contour, shading, texture, and shape - make it surprisingly good at organizing artworks by a kind of visual similarity.</p>
+    <p>To visualize these 2,048 dimensions, Golan and Lingdong then used the UMAP algorithm, combined with a rectangularizing assignment process, to cast our imgaes into visual grids that attempt to place similar images near to each other. By definition, we remove things in doing this dimensionality reduction. But, like pressing a flower into a book to best illustrate its unique botanical features, this reduction helps us do comparative work at a scale that wouldn't be easy to do otherwise.</p>
+    <h3 id="metadata">Metadata pipeline</h3>
+    <p>
+      While Golan and Ligndong were generating these ahistorical features, Sarah Reiff Conell and Matthew Lincoln were applying their art historical and metadata skills to parse the decidedly
+      <em>historical</em> data that we had access to from teh three collecitons we were putting in to conversation. This let us colorize the ahistorical visualizations of visual similarity with layers of historical information. We could then compare whether a certain historical traits, such as once belonging to Samuel H. Kress, correllated noticeably with the visual clusters produced by the computer vision pipeline. You can see some of our observations here.
+    </p>
+    <p>Sarah and Matthew worked in R, Python, Tableau, Open Refine, and Excel, as the formats and data cleaning needs for the three collections were all over the map.</p>
+
+    <h2 id="acknowledgements">Acknowledgements</h2>
     <p>We are grateful to additional partners who supplied data and images for this effort:</p>
     <ul>
       <li>From the Library of Congress: Stephanie Stilo, Jamie Mears, and additional staff from LC Labs, who provided materials on the Rosenwald Collection</li>
       <li>From the Samuel H. Kress Foundation: Max Marmor and Chelsea Cates, who provided images and data from the in-progress catalog of the Kress Collection.</li>
     </ul>
-    <h2>Data downloads</h2>
+    <h2 id="data-downloads">Data downloads</h2>
     <p>
       The data and images produced by this project, as well as the team's original presentation, are available at:
       <a
         href="https://doi.org/10.1184/R1/10061885"
       >https://doi.org/10.1184/R1/10061885</a>
     </p>
-    <h2>Read more</h2>
+    <h2 id="read-more">Read more</h2>
     <ol>
       <li>
         NGA Paess Release:
@@ -52,3 +79,24 @@ export default {
   name: "About"
 };
 </script>
+
+<style>
+figure {
+  max-width: 600px;
+  margin: 2em auto 2em auto;
+}
+
+figure > img {
+  width: 100%;
+  align-self: center;
+}
+
+figcaption {
+  margin-top: 1em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: darkslategray;
+}
+</style>
