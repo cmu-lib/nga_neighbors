@@ -1,7 +1,10 @@
 <template>
   <b-container v-if="work" class="my-4">
     <b-row>
-      <b-col xs="4">
+      <b-col lg="6">
+        <b-img center :src="work.iiif" :alt="work.title" class="m-3 work_image" />
+      </b-col>
+      <b-col lg="6">
         <b-card>
           <h2>
             <em>{{ work.title }}</em>
@@ -12,7 +15,7 @@
             <span class="dating" v-if="work.displaydate">{{ work.displaydate }}</span>
           </p>
           <p>
-            <span class="medium" v-if="work.medium">({{ work.medium }})</span>
+            <span class="medium" v-if="work.medium">{{ work.medium }}</span>
           </p>
           <p>{{ work.creditline }}</p>
           <p>
@@ -24,9 +27,6 @@
             <WorkPreview v-for="nn in work.neighbors" :key="nn" :id="nn" />
           </b-list-group>
         </b-card>
-      </b-col>
-      <b-col xs="8">
-        <img :src="work.iiif" :alt="work.title" class="work_image" />
       </b-col>
     </b-row>
   </b-container>
@@ -75,7 +75,7 @@ export default {
 
 <style>
 img.work_image {
-  max-width: 800px;
+  max-width: 100%;
   max-height: 800px;
 }
 </style>
