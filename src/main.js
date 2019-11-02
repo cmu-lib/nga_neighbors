@@ -31,7 +31,10 @@ export const subpath = "nga"
 const router = new VueRouter({
   mode: 'history',
   base: subpath,
-  routes: routes
+  routes: routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 }
+  }
 })
 
 
