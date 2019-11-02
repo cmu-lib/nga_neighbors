@@ -30,6 +30,9 @@ export default {
   },
   mounted() {
     return OpenSeadragon(this.options);
+  },
+  updated() {
+    return OpenSeadragon(this.options);
   }
 };
 </script>

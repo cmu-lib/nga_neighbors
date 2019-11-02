@@ -1,8 +1,13 @@
 <template>
   <b-container class="my-3">
-    <p></p>
+    <b-jumbotron
+      header="National Neighbors"
+      lead="Distant Viewing the National Gallery of Art 'collection of collections'"
+      bg-variant="danger"
+      text-variant="white"
+    >Carnegie Mellon University and Unviersity of Pittsburgh team up at the National Gallery of Art 2019 Datathon</b-jumbotron>
     <b-row>
-      <b-col lg="6" class="my-3">
+      <b-col lg="6" class="mx-auto">
         <h1 class="text-center">Get the big picture</h1>
         <p>Explore visualizations of the entire NGA paintings and prints collection in context with other sibling collections.</p>
         <b-list-group v-if="grids">
@@ -16,17 +21,22 @@
           </b-list-group-item>
         </b-list-group>
       </b-col>
-      <b-col lg="6" class="my-3">
+      <b-col lg="6" class="mx-auto">
         <h1 class="text-center">Browse individual works</h1>
-        <p>Look up an individual work from the NGA, or hop to one at random, to see what its nearest visual neighbors are.</p>
+        <p>Look up an individual work from the NGA, or hop to one at random, to meet its nearest visual neighbors.</p>
         <b-form-group
           id="accno_group"
           label-for="accno_input"
           label="Accession number"
-          description="Enter accession number to view object and its nearest neighbors"
+          description="Enter the NGA accession number to view an object and its nearest neighbors"
         >
           <b-input-group>
-            <b-form-input v-model="accno" id="accno_input" :state="valid_accno" />
+            <b-form-input
+              v-model="accno"
+              id="accno_input"
+              :state="valid_accno"
+              placeholder="e.g. 2009.24.1"
+            />
             <b-input-group-append>
               <b-button
                 v-show="valid_accno"
@@ -36,7 +46,7 @@
             </b-input-group-append>
           </b-input-group>
         </b-form-group>
-        <RandomWorkButton :works="works" />
+        <RandomWorkButton :works="works" size="lg" />
       </b-col>
     </b-row>
   </b-container>

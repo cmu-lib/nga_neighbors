@@ -3,7 +3,7 @@
     <h1 class="mx-3">{{ grid.title }}</h1>
     <IIIF v-if="grid" :id="grid.id" :info_url="info_url" />
     <b-container class="my-4">
-      <p>{{ grid.description }}</p>
+      <div v-html="grid.description" />
     </b-container>
   </b-container>
 </template>

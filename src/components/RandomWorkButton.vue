@@ -1,12 +1,16 @@
 <template>
-  <b-button variant="secondary" @click="random_object">I'm feeling lucky!</b-button>
+  <b-button variant="primary" @click="random_object" :size="size">I'm feeling lucky!</b-button>
 </template>
 
 <script>
 export default {
   name: "RandomWorkButton",
   props: {
-    works: Array
+    works: Array,
+    size: {
+      type: String,
+      default: null
+    }
   },
   methods: {
     getRandomInt(max) {
