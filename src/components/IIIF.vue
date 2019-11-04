@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style>
-.osd {
+.osd:not(:fullscreen) {
   position: relative;
   height: 600px;
   width: 100%;

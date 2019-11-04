@@ -113,8 +113,8 @@ export default {
 };
 </script>
 
-<style>
-.osd {
+<style scoped>
+.osd:not(:fullscreen) {
   width: 99.4vw;
   left: 50%;
   right: 50%;
@@ -122,7 +122,7 @@ export default {
   margin-left: -50vw;
   margin-right: -50vw;
 }
-figure {
+figure:not(:fullscreen) {
   margin-top: 3em;
   margin-bottom: 3em;
 }

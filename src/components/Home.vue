@@ -8,8 +8,8 @@
     >
       <p>A project by Carnegie Mellon University and the University of Pittsburgh for the National Gallery of Art October 2019 Datathon.</p>
       <b-row>
-        <b-button variant="light" :to="{name: 'Essay'}" class="mx-2">See our results</b-button>
-        <b-button variant="light" :to="{name: 'About'}" class="mx-2">Learn more about the team</b-button>
+        <b-button variant="light" :to="{name: 'Essay'}" class="m-2">See our results</b-button>
+        <b-button variant="light" :to="{name: 'About'}" class="m-2">Learn more about the team</b-button>
       </b-row>
     </b-jumbotron>
 
@@ -101,3 +101,12 @@ export default {
   }
 };
 </script>
+
+<style>
+.jumbotron {
+  background-image: url("/nga/img/grid-sample.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+</style>
