@@ -26,6 +26,7 @@ const routes = [
 ]
 
 export const base = "https://dh-web.hss.cmu.edu/"
+export const public_base = process.env.PUBLIC_BASE
 export const subpath = "nga"
 
 const router = new VueRouter({
@@ -37,9 +38,12 @@ const router = new VueRouter({
   }
 })
 
-
 export const HTTP = axios.create({
   baseURL: base
+})
+
+export const appHTTP = axios.create({
+  baseURL: public_base
 })
 
 new Vue({

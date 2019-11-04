@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { HTTP } from "./main";
+import { HTTP, appHTTP } from "./main";
 import RandomWorkButton from "./components/RandomWorkButton";
 
 export default {
@@ -52,7 +52,7 @@ export default {
         console.log(error);
       }
     );
-    HTTP.get("/nga/images.json", { baseURL: "http://localhost:8080" }).then(
+    appHTTP.get("/nga/images.json").then(
       response => {
         this.grids = response.data;
       },
