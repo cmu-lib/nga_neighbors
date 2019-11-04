@@ -1,20 +1,23 @@
 <template>
   <b-container class="my-3">
+    <h1>Viewing the National Gallery's “collection of collections” with machines</h1>
     <p>
-      Using our
-      <a href="/nga/about/#pipeline">computer vision pipeline</a>, we were able to create gridded visualizations of selections of artwork images that arranged more similar images closer to one another. It's worth taking a moment to understand how the visual similarity derived by Inception-v3 tracks with the formal qualities we'd usually associate with in art history, and how it operates differently.
+      At the National Gallery of Art Datathon, our team wanted to use the images of the artworks themselves as data, in concert with the curatorial metadata that the Gallery had provided us. Using our
+      <a
+        href="/nga/about/#pipeline"
+      >computer vision pipeline</a>, we were able to create gridded visualizations of selections of artwork images that arranged similar images closer to one another. It's worth taking a moment to understand how the visual similarity derived by Inception-v3 tracks with the formal qualities we'd usually associate with in art history, and how it operates differently.
     </p>
     <figure>
       <IIIF :info_url="info_url('nga_paintings')" id="nga_paintings" />
-      <figcaption>All the paintings in the national gallery of art.</figcaption>
+      <figcaption>All the paintings in the National Gallery of Art.</figcaption>
     </figure>
     <p>At first glance, the generated image features and the layout algorithm applied to them, does surprisingly well at creating islands of images that do make visual sense together. Abstract paintings, nudes, landscape paintings, portraits with dark backgrounds, still lifes; they all group in their own clusters.</p>
     <p>
-      Even the "mistakes" follow a logic that we can translate into words. If you look closely in the portraiture section, you'll glimpse a black and white Robert Motherwell painting amidst the varied portrait heads. Although the Motherwell is an abstract painting, its forms do bear some resemblance to a silhouette, explaining why it ended up in the same visual neighborhood. Inception's fixation on broad geometric qualities can eclipse more important features, though. For exmaple, it is quick to cluster together circular paintings, prioritizing the general overall outline shape over the fact that the Holy Family inside one
+      Even the "mistakes" follow a logic that we can translate into words. If you look closely in the portraiture section, you'll glimpse a black and white Robert Motherwell painting amidst the varied portrait heads. Although the Motherwell is an abstract painting, its forms do bear some resemblance to a silhouette, explaining why it ended up in the same visual neighborhood. Inception's fixation on broad geometric qualities can eclipse more important features, though. For examaple, it is quick to cluster together circular paintings, prioritizing the general overall outline shape over the fact that the Holy Family inside one
       <em>tondo</em> might be more appropriately placed next to other images of robed groups of figures. All of
       <a
         href="https://www.nga.gov/collection/artist-info.1113.html#works"
-      >George Catlin's paintings</a>, with their repeated vignettes, also cluster together in a sea. Taking time to explore these grids at high zoom offers many surprising visual juxtapositions.
+      >George Catlin's paintings</a>, with their repeated vignettes, also cluster together in a sea at the top center of the visualization. Taking time to explore these grids at high zoom offers many surprising visual juxtapositions.
     </p>
     <p>However, visual similarity alone is a very limited axis on which to base art historical research. So much of our work depends on combining visual and formal analysis with historical context. Inception, however, is ahistorical by design - it work only with the information in the pixels of the image.</p>
     <p>But what if we take Inception's strength, and use it to compare and contrast against data dimensions that do carry historical weight: the human-curated collections data that inspired the NGA datathon in the first place? This idea is what led us (at the urging of Sarah Reiff Conell) to pay close attention to the visual composition of some of the key collections that not only comprise the backbone of the NGA, but also extend beyond its walls into other institutions around the country.</p>
@@ -79,8 +82,18 @@
         <span style="color:gray;">White tiles are prints and drawings NGA Kress Collection.</span>
       </figcaption>
     </figure>
-    <p>That said, if we read these clusters for what they're worth, the Rosenwald collection overlay is still interesting. The orange tiles, signifying the NGA Rosenwald prints and drawings, cover this visual space. Unlike the Kress paintings, they cover virtually all corners of the NGA's graphic universe (although notably thin in the region near the top center that contains abstract and geometric graphic arts.) However the LoC's book illustrations tend to cluster tightly, because they have more restricted forms and techniques. The large hemisphere of LoC illustrations in the upper left, for example, comprise narrative scenes set into dense decorative frameworks repeating throughout the book. Even though their content is diverse, the overall form is so standardized that Inception groups them closely together.</p>
+    <p>That said, if we read these clusters for what they're worth, the Rosenwald collection overlay is still interesting. The orange tiles, signifying the NGA Rosenwald prints and drawings, cover this visual space. Unlike the Kress paintings, the Rosenwald collection touches virtually all corners of the NGA's graphic universe (although notably thin in the region near the top center that contains abstract and geometric graphic arts.) However the LoC's Rosenwald book illustrations tend to cluster far more tightly, because they have more restricted forms and techniques. The large hemisphere of LoC illustrations in the upper left, for example, comprise narrative scenes set into dense decorative frameworks repeating throughout the book. Even though their content is diverse, the overall form is so standardized that Inception groups them closely together.</p>
     <p>This particular visual clustering approach does underline the sheer breadth of Rosenwald's collecting compared to a more single-minded connoisseur like Kress. But more than that, it helps us better understand the behavior of the neural net we used to project this visual space, both its fixations as well as its oversights.</p>
+    <p>
+      To see more experimental visualizations from our time at the datathon, visit the
+      <a
+        href="https://www.flickr.com/photos/creativeinquiry/albums/72157711499030821"
+      >STUDIO for Creative Inquiry's Flickr page</a>.
+    </p>
+    <p>
+      If you want to get a closer look at these artworks and their visual neighbors, hit the "I'm feeling lucky" button at the top of the page to pull one up at random. Or, if you know the NGA accession number of a particular artwork,
+      <router-link :to="{name: 'Home'}">punch it in on the home page</router-link>.
+    </p>
   </b-container>
 </template>
 

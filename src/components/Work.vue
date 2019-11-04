@@ -22,7 +22,19 @@
             <a :href="web_url">See this work at the NGA website</a>
           </p>
         </b-card>
-        <b-card header="Nearest visual neighbors" no-body class="my-2">
+        <b-card no-body class="my-2">
+          <b-card-header class="d-flex">
+            Nearest visual neighbors
+            <span class="ml-auto" id="nn-tooltip-target">
+              <small>What is this?</small>
+            </span>
+            <b-tooltip target="nn-tooltip-target" triggers="hover">
+              These neighbors were generated based on neural-network-derived visual similarity. To learn more about that process, see the
+              <a
+                href="/nga/about"
+              >about page</a>
+            </b-tooltip>
+          </b-card-header>
           <b-list-group flush>
             <WorkPreview v-for="nn in work.neighbors" :key="nn" :id="nn" />
           </b-list-group>

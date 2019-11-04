@@ -24,25 +24,31 @@
     <p>A joint team from Carnegie Mellon and the University of Pittsburgh used image features from a convolutional neural network to index the National Gallery of Art's images by visual similarity. This allowed the team to compare the visual distribution of different collections within the National Gallery, and with related parts of the Samuel H. Kress collection (distributed in museums around the country) as well as a portion of the Lessing Rosenwald collection (split between the National Gallery and the Library of Congress).</p>
     <p>Matthew Lincoln built this website to exhibit some of the visualizations masterminded by Lingdong Huang and Golan Levin, as well as to provide a proof-of-concept tool for displaying near visual neighbors of artworks across a museum. Because of time constraints, the individual-work browsing tool currently only features selected images from the National Gallery of Art. However the concept is applicable to any number of collections.</p>
     <p>
-      To see cross-institutional comparisons, see our image similarity montages
-      <router-link :to="{name: 'GridView', params: {id: 'kress_and_nga'}}">(example here)</router-link>&nbsp;where we combine views of both NGA artworks alongside selected images from the Kress Collection and the Library of Congress's Rosenwald Collection.
+      To see cross-institutional comparisons, see our
+      <router-link :to="{name: 'Essay'}">image similarity montages</router-link>&nbsp;where we combine views of both NGA artworks alongside selected images from the Kress Collection and the Library of Congress's Rosenwald Collection.
     </p>
+    <b-alert show variant="warning">
+      <p>Because of limitations in linkable metadata and image licensing, as well as in time, right now this site only features the metadata and publicly-available IIIF-enabled images from the National Gallery of Art.</p>
+      <p>
+        For the moment, the best way to see the impact of those collections on our work is to see our
+        <router-link :to="{name: 'Essay'}">big-picture interpretation essay</router-link>.
+      </p>
+    </b-alert>
     <h3 id="pipeline">Computer vision pipeline</h3>
     <p>
       Golan Levin and Lingdong Huang from CMU's STUDIO for Creative Inquiry spearheaded the visual indexing work. USing tools developed for similar projects with the
       <a
         href="https://cmoa.org/art/teenie-harris-archive/"
-      >Carnegie Museum of Art's Teenie Harris Archive</a>, Golan and Lingdong took the images that Sarah and I had assembled and began to calculate "features" from them: 2,048-number long lists produced by a convolutional neural network claled Inception-v3. This CNN is originally trained to identify objects in photographs; for example, to tag an image as depicting a "bicycle" or a "dog". The 2,048 dimensions it creates from an image are ones that have proven to be pretty good at accomplishing this task.
+      >Carnegie Museum of Art's Teenie Harris Archive</a>, Golan and Lingdong took the images that Sarah Reiff Conell and Matthew Lincoln had assembled and began to calculate "features" from them: 2,048-number long lists produced by a convolutional neural network called Inception-v3. This CNN is originally trained to identify objects in photographs; for example, to tag an image as depicting a "bicycle" or a "dog". The 2,048 dimensions it creates from an image are ones that have proven to be pretty good at accomplishing this task.
     </p>
     <p>Artistic similarity is about much more than discriminating which objects are on view in a work of art (if the artwork is even representational, which it often is not!). However, even though Inception-v3 would do a poor job at identifying useful art historical elements in these artworks, the work that it has to do along the way - building up internal models of color, contour, shading, texture, and shape - make it surprisingly good at organizing artworks by a kind of visual similarity.</p>
-    <p>To visualize these 2,048 dimensions, Golan and Lingdong then used the UMAP algorithm, combined with a rectangularizing assignment process, to cast our imgaes into visual grids that attempt to place similar images near to each other. By definition, we remove things in doing this dimensionality reduction. But, like pressing a flower into a book to best illustrate its unique botanical features, this reduction helps us do comparative work at a scale that wouldn't be easy to do otherwise.</p>
+    <p>To visualize these 2,048 dimensions, Golan and Lingdong then used the UMAP algorithm, combined with a rectangularizing assignment process, to cast our images into visual grids that attempt to place similar images near to each other. By definition, we remove things in doing this dimensionality reduction. But, like pressing a flower into a book to best illustrate its unique botanical features, this reduction helps us do comparative work at a scale that wouldn't be easy to do otherwise.</p>
     <h3 id="metadata">Metadata pipeline</h3>
     <p>
       While Golan and Ligndong were generating these ahistorical features, Sarah Reiff Conell and Matthew Lincoln were applying their art historical and metadata skills to parse the decidedly
-      <em>historical</em> data that we had access to from teh three collecitons we were putting in to conversation. This let us colorize the ahistorical visualizations of visual similarity with layers of historical information. We could then compare whether a certain historical traits, such as once belonging to Samuel H. Kress, correllated noticeably with the visual clusters produced by the computer vision pipeline. You can see some of our observations here.
+      <em>historical</em> data that we had access to from the three collections we were putting in to conversation. This let us colorize the ahistorical visualizations of visual similarity with layers of historical information. We could then compare whether a certain historical traits, such as once belonging to Samuel H. Kress, correlated noticeably with the visual clusters produced by the computer vision pipeline. You can see some of our observations here.
     </p>
     <p>Sarah and Matthew worked in R, Python, Tableau, Open Refine, and Excel, as the formats and data cleaning needs for the three collections were all over the map.</p>
-
     <h2 id="acknowledgements">Acknowledgements</h2>
     <p>We are grateful to additional partners who supplied data and images for this effort:</p>
     <ul>
@@ -56,10 +62,10 @@
         href="https://doi.org/10.1184/R1/10061885"
       >https://doi.org/10.1184/R1/10061885</a>
     </p>
-    <h2 id="read-more">Read more</h2>
+    <h2 id="read-more">See more</h2>
     <ol>
       <li>
-        NGA Paess Release:
+        NGA Press Release:
         <a
           href="https://www.nga.gov/press/2019/datathon.html"
         >https://www.nga.gov/press/2019/datathon.html</a>
@@ -69,6 +75,12 @@
         <a
           href="https://www.youtube.com/watch?v=ewm4cL3vn6k"
         >https://www.youtube.com/watch?v=ewm4cL3vn6k</a>
+      </li>
+      <li>
+        Further data visualizations:
+        <a
+          href="https://www.flickr.com/photos/creativeinquiry/albums/72157711499030821"
+        >https://www.flickr.com/photos/creativeinquiry/albums/72157711499030821</a>
       </li>
     </ol>
   </b-container>

@@ -4,6 +4,9 @@
     <IIIF v-if="grid" :id="grid.id" :info_url="info_url" />
     <b-container class="my-4">
       <div v-html="grid.description" />
+      <p>
+        <router-link :to="{name: 'Essay'}">Read more about this visualization in context.</router-link>
+      </p>
     </b-container>
   </b-container>
 </template>

@@ -1,15 +1,22 @@
 <template>
   <b-container fluid class="p-0 d-flex flex-column parent">
     <b-navbar variant="dark" type="dark">
-      <b-navbar-brand :to="{name: 'Home'}">National Neighbors</b-navbar-brand>
+      <b-navbar-brand :to="{name: 'Home'}">
+        <img
+          src="/nga/img/avatar.jpg"
+          class="d-none d-sm-inline align-center mr-3 hidden-xs"
+          alt="Similar image squares"
+          width="50"
+        />
+        National Neighbors
+      </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-navbar-nav>
-        <b-nav-item :to="{name: 'Essay'}">Essay</b-nav-item>
         <b-nav-item :to="{name: 'About'}">About</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-form>
-          <RandomWorkButton :works="works" />
+          <RandomWorkButton :works="works" size="sm" />
         </b-nav-form>
       </b-navbar-nav>
     </b-navbar>
