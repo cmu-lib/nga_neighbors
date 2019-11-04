@@ -2,15 +2,16 @@
   <b-container class="my-3">
     <b-jumbotron
       header="National Neighbors"
-      lead="Distant Viewing the National Gallery of Art 'collection of collections'"
-      bg-variant="danger"
+      lead="Distant Viewing the National Gallery of Art's &quot;collection of collections&quot;"
+      bg-variant="secondary"
       text-variant="white"
-    >Carnegie Mellon University and Unviersity of Pittsburgh team up at the National Gallery of Art 2019 Datathon</b-jumbotron>
+    >Carnegie Mellon University and Unviersity of Pittsburgh team up at the National Gallery of Art October 2019 Datathon.</b-jumbotron>
     <b-row>
       <b-col lg="6" class="mx-auto">
         <h1 class="text-center">Get the big picture</h1>
-        <p>Explore visualizations of the entire NGA paintings and prints collection in context with other sibling collections.</p>
-        <b-list-group v-if="grids">
+        <p>We explored the visual cohesion of the National Gallery of Art's paintings, prints, and drawings in context with sibling collections.</p>
+        <b-button variant="info" :to="{name: 'Essay'}" class="my-2" block>Read visual essay</b-button>
+        <b-list-group v-if="grids" class="my-3">
           <b-list-group-item v-for="grid in grids" :key="grid.id">
             <b-media>
               <template v-slot:aside>
@@ -23,12 +24,14 @@
       </b-col>
       <b-col lg="6" class="mx-auto">
         <h1 class="text-center">Browse individual works</h1>
-        <p>Look up an individual work from the NGA, or hop to one at random, to meet its nearest visual neighbors.</p>
+        <p>Click the button to hop to a random object from the National Gallery of Art and see its nearest visual neighbors. Or, enter the accession number of a specific work</p>
+        <RandomWorkButton :works="works" block />
         <b-form-group
           id="accno_group"
           label-for="accno_input"
           label="Accession number"
-          description="Enter the NGA accession number to view an object and its nearest neighbors"
+          description="Enter the NGA accession number to load a specific object and its nearest neighbors"
+          class="my-3"
         >
           <b-input-group>
             <b-form-input
@@ -46,7 +49,6 @@
             </b-input-group-append>
           </b-input-group>
         </b-form-group>
-        <RandomWorkButton :works="works" size="lg" />
       </b-col>
     </b-row>
   </b-container>
@@ -92,3 +94,6 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+</style>

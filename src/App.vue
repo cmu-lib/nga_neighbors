@@ -4,9 +4,10 @@
       <b-navbar-brand :to="{name: 'Home'}">National Neighbors</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-navbar-nav>
+        <b-nav-item :to="{name: 'Essay'}">Essay</b-nav-item>
         <b-nav-item :to="{name: 'About'}">About</b-nav-item>
       </b-navbar-nav>
-      <b-navbar-nav>
+      <b-navbar-nav class="ml-auto">
         <b-nav-form>
           <RandomWorkButton :works="works" />
         </b-nav-form>
@@ -18,7 +19,8 @@
         <b-nav-text>
           ©
           <a href="https://library.cmu.edu">Carnegie Mellon University Libraries</a> 2019. Site built by
-          <a href="https://matthewlincoln.net">Matthew Lincoln</a>.
+          <a href="https://matthewlincoln.net">Matthew Lincoln</a>. Content by the
+          <router-link :to="{name: 'About'}">project team</router-link>.
         </b-nav-text>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">

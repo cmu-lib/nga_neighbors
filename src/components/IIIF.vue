@@ -11,13 +11,19 @@ export default {
       type: String,
       default: "iiif"
     },
+    square_size: {
+      type: Number,
+      default: 256
+    },
+    spacing: {
+      type: Number,
+      default: 25
+    },
     info_url: String,
     extra: Object
   },
   data() {
-    return {
-      viewer: null
-    };
+    return {};
   },
   computed: {
     options() {
@@ -29,17 +35,20 @@ export default {
     }
   },
   mounted() {
-    return OpenSeadragon(this.options);
+    OpenSeadragon(this.options);
   },
   updated() {
-    return OpenSeadragon(this.options);
+    OpenSeadragon(this.options);
   }
 };
 </script>
 
 <style>
 .osd {
+  position: relative;
   height: 600px;
   width: 100%;
+  border-top: 1px lightgray solid;
+  border-bottom: 1px lightgray solid;
 }
 </style>

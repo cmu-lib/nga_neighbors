@@ -1,5 +1,5 @@
 <template>
-  <b-button variant="primary" @click="random_object" :size="size">I'm feeling lucky!</b-button>
+  <b-button variant="primary" @click="random_object" :size="size" :block="block">I'm feeling lucky!</b-button>
 </template>
 
 <script>
@@ -10,6 +10,10 @@ export default {
     size: {
       type: String,
       default: null
+    },
+    block: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

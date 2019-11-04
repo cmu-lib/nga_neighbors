@@ -35,10 +35,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.osd {
-  border-top: 1px lightgray solid;
-  border-bottom: 1px lightgray solid;
-}
-</style>

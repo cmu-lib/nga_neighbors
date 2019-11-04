@@ -17,10 +17,12 @@ import Home from "./components/Home"
 import Work from "./components/Work"
 import Grid from "./components/Grid"
 import About from "./components/About"
+import Essay from "./components/Essay"
 
 const routes = [
   { path: "/", name: "Home", component: Home },
   { path: "/about", name: "About", component: About },
+  { path: "/essay", name: "Essay", component: Essay },
   { path: "/work/:id", name: "WorkView", component: Work, props: (route) => ({ id: route.params.id }) },
   { path: "/grid/:id", name: "GridView", component: Grid, props: (route) => ({ id: route.params.id }) }
 ]
