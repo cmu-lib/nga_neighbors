@@ -7,13 +7,17 @@
       text-variant="white"
     >
       <p>A project by Carnegie Mellon University and the University of Pittsburgh for the National Gallery of Art October 2019 Datathon.</p>
+      <b-row>
+        <b-button variant="light" :to="{name: 'Essay'}" class="mx-2">See our results</b-button>
+        <b-button variant="light" :to="{name: 'About'}" class="mx-2">Learn more about the team</b-button>
+      </b-row>
     </b-jumbotron>
 
     <b-row>
       <b-col lg="6" class="mx-auto">
         <h1 class="text-center">Get the big picture</h1>
         <p>We explored the visual cohesion of the National Gallery of Art's paintings, prints, and drawings in context with sibling collections. Read our interpretations or dive directly into our data visualizations.</p>
-        <b-button variant="info" :to="{name: 'Essay'}" class="my-2" block>Read visual essay</b-button>
+        <b-button :to="{name: 'Essay'}" variant="primary" class="my-2" block>Read visual essay</b-button>
         <b-list-group v-if="grids" class="my-3">
           <b-list-group-item v-for="grid in grids" :key="grid.id">
             <b-media>
