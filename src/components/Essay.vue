@@ -19,7 +19,7 @@
         href="https://www.nga.gov/collection/artist-info.1113.html#works"
       >George Catlin's paintings</a>, with their repeated vignettes, also cluster together in a sea at the top center of the visualization. Taking time to explore these grids at high zoom offers many surprising visual juxtapositions.
     </p>
-    <p>However, visual similarity alone is a very limited axis on which to base art historical research. So much of our work depends on combining visual and formal analysis with historical context. Inception, however, is ahistorical by design - it work only with the information in the pixels of the image.</p>
+    <p>However, visual similarity alone is a very limited axis on which to base art historical research. So much of our work depends on combining visual and formal analysis with historical context. Inception, however, is ahistorical by design - it works only with the information in the pixels of the image.</p>
     <p>But what if we take Inception's strength, and use it to compare and contrast against data dimensions that do carry historical weight: the human-curated collections data that inspired the NGA datathon in the first place? This idea is what led us (at the urging of Sarah Reiff Conell) to pay close attention to the visual composition of some of the key collections that not only comprise the backbone of the NGA, but also extend beyond its walls into other institutions around the country.</p>
     <h2 id="kress">Kress Collection</h2>
     <p>
@@ -51,7 +51,7 @@
       </figcaption>
     </figure>
     <p>The first major observation is that Kress paintings are disporportionately clustered around formal portraits and religious paintings, which confirms what we would expect to see knowing the collection's focus on Renaissance Italian painting. While Kress did collect some landscapes (scattered at the top of our visualization), it was not his priority. Also as we'd expect, modern abstract art sits like an unperturbed ocean in this layout.</p>
-    <p>What had no preconceived notion about, though, was whether the National Gallery's Kress paintings (highlighted in white in the visualization) would similarly be clustered in a corner. Was the Kress donation to the Gallery representative of Kress (focused predominantly on Italian devotional and figurative works) or did it attempt to more uniformly cover the visual space of art history available in Kress' larger collection, including landscapes and still lifes?</p>
+    <p>What we had no preconceived notion about, though, was whether the National Gallery's Kress paintings (highlighted in white in the visualization) would similarly be clustered in a corner. Was the Kress donation to the Gallery representative of Kress (focused predominantly on Italian devotional and figurative works) or did it attempt to more uniformly cover the visual space of art history available in Kress' larger collection, including landscapes and still lifes?</p>
     <p>
       What we see is that the white tiles are not randomly distributed amongst the Kress collection, which would end up with most of them falling in the lower left corner. Instead, they're
       <em>uniformly</em> distributed across all of Kress' visual scope, ensuring that one of the NGA's founding collections would cover as wide an array of artistic forms as it could - at least within the Italianate bounds that Kress made available.
@@ -67,7 +67,7 @@
         >Library of Congress' Rosenwald Collection.</a>
       </figcaption>
     </figure>
-    <p>As in almost any collection, works on paper are an order of magnitude larger, counting object by object. Inception's performance on graphic works, which do not always have the color cues that paintings can provide, is mixed. Certain kinds of works, like architectural plans or landscape prints, cluster quite well. But Inception fixates more on the texture signals for specific techniques than it did for most paintings, so clustering on higher=order features like represented objects is not as strong. The serial nature of prints is also an important structuring element, so many of the "clusters" seen here are large arrays of works all using the same style, paper, inking, and printing technique, even though their actual content and visual composition aren't related.</p>
+    <p>As in almost any collection, works on paper are an order of magnitude larger, counting object by object. Inception's performance on graphic works, which do not always have the color cues that paintings can provide, is mixed. Certain kinds of works, like architectural plans or landscape prints, cluster quite well. But Inception fixated more on the texture signals for specific graphic techniques than it did for most paintings, so clustering on higher-order features like represented objects is not as strong. The serial nature of prints is also an important structuring element, so many of the "clusters" seen here are large arrays of works all using the same style, paper, inking, and printing technique, even though their actual content and visual composition aren't related.</p>
     <figure>
       <IIIF :info_url="info_url('prints_drawings_tinted')" id="prints_drawings_tinted" />
       <figcaption>
