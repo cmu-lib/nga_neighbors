@@ -42,7 +42,12 @@
       >Carnegie Museum of Art's Teenie Harris Archive</a>, Golan and Lingdong took the images that Sarah Reiff Conell and Matthew Lincoln had assembled and began to calculate "features" from them: 2,048-number long lists produced by a convolutional neural network called Inception-v3. This CNN is originally trained to identify objects in photographs; for example, to tag an image as depicting a "bicycle" or a "dog". The 2,048 dimensions it creates from an image are ones that have proven to be pretty good at accomplishing this task.
     </p>
     <p>Artistic similarity is about much more than discriminating which objects are on view in a work of art (if the artwork is even representational, which it often is not!). However, even though Inception-v3 would do a poor job at identifying useful art historical elements in these artworks, the work that it has to do along the way - building up internal models of color, contour, shading, texture, and shape - make it surprisingly good at organizing artworks by a kind of visual similarity.</p>
-    <p>To visualize these 2,048 dimensions, Golan and Lingdong then used the UMAP algorithm, combined with a rectangularizing assignment process, to cast our images into visual grids that attempt to place similar images near to each other. By definition, we remove things in doing this dimensionality reduction. But, like pressing a flower into a book to best illustrate its unique botanical features, this reduction helps us do comparative work at a scale that wouldn't be easy to do otherwise.</p>
+    <p>
+      To visualize these 2,048 dimensions, Golan and Lingdong then used the UMAP algorithm, combined with
+      <a
+        href="https://github.com/CreativeInquiry/TeenieHarrisProject/blob/master/notebooks/Create%20Grid%20from%20Embedding.ipynb"
+      >a rectangularizing assignment process developed by Kyle McDonald</a>, to cast our images into visual grids that attempt to place similar images near to each other. By definition, we remove things in doing this dimensionality reduction. But, like pressing a flower into a book to best illustrate its unique botanical features, this reduction helps us do comparative work at a scale that wouldn't be easy to do otherwise.
+    </p>
     <h3 id="metadata">Metadata pipeline</h3>
     <p>
       While Golan and Ligndong were generating these ahistorical features, Sarah Reiff Conell and Matthew Lincoln were applying their art historical and metadata skills to parse the decidedly
@@ -55,12 +60,24 @@
       <li>From the Library of Congress: Stephanie Stilo, Jamie Mears, and additional staff from LC Labs, who provided materials on the Rosenwald Collection</li>
       <li>From the Samuel H. Kress Foundation: Max Marmor and Chelsea Cates, who provided images and data from the in-progress catalog of the Kress Collection.</li>
     </ul>
-    <h2 id="data-downloads">Data downloads</h2>
+    <h2 id="data-downloads">Data and code downloads</h2>
     <p>
       The data and images produced by this project, as well as the team's original presentation, are available at:
       <a
         href="https://doi.org/10.1184/R1/10061885"
       >https://doi.org/10.1184/R1/10061885</a>
+    </p>
+    <p>
+      Rectangularizing assignment code by Kyle Mcdonald:
+      <a
+        href="https://github.com/CreativeInquiry/TeenieHarrisProject/blob/master/notebooks/Create%20Grid%20from%20Embedding.ipynb"
+      >https://github.com/CreativeInquiry/TeenieHarrisProject/blob/master/notebooks/Create%20Grid%20from%20Embedding.ipynb</a>
+    </p>
+    <p>
+      The image tiling code used to create deep-zoom tiles of the data visualizations:
+      <a
+        href="https://github.com/cmu-lib/magick_tile/"
+      >https://github.com/cmu-lib/magick_tile/</a>
     </p>
     <h2 id="read-more">See more</h2>
     <ol>
