@@ -1,5 +1,12 @@
 <template>
   <b-container class="my-4">
+    <h2>How to Cite</h2>
+    <p>
+      Matthew Lincoln, Golan Levin, Sarah Reiff Conell, Lingdong Huang, (2019) "National Neighbors: Distant Viewing the National Gallery of Art's Collection of Collections", (November 2019)
+      <a
+        href="https://dh-web.hss.cmu.edu/nga"
+      >https://dh-web.hss.cmu.edu/nga</a>
+    </p>
     <h2 id="team">Project Team</h2>
     <ul>
       <li>
