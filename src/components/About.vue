@@ -106,6 +106,18 @@
           href="https://www.flickr.com/photos/creativeinquiry/albums/72157711499030821"
         >https://www.flickr.com/photos/creativeinquiry/albums/72157711499030821</a>
       </li>
+      <li>
+        Carnegie Mellon University Libraries press release:
+        <a
+          href="https://library.cmu.edu/about/publications/news/visualizing-enduring-impact-art-collectors"
+        >https://library.cmu.edu/about/publications/news/visualizing-enduring-impact-art-collectors</a>
+      </li>
+      <li>
+        University of Pittsburgh press release:
+        <a
+          href="https://www.pittwire.pitt.edu/news/phd-student-takes-data-driven-look-art"
+        >https://www.pittwire.pitt.edu/news/phd-student-takes-data-driven-look-art</a>
+      </li>
     </ol>
   </b-container>
 </template>
