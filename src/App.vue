@@ -3,7 +3,7 @@
     <b-navbar variant="dark" type="dark">
       <b-navbar-brand :to="{name: 'Home'}">
         <img
-          src="/nga/img/avatar.jpg"
+          src="/img/avatar.jpg"
           class="d-none d-sm-inline align-center mr-3 hidden-xs"
           alt="Similar image squares"
           width="50"
@@ -61,7 +61,7 @@ export default {
         console.log(error);
       }
     );
-    appHTTP.get("/nga/images.json").then(
+    appHTTP.get("/images.json").then(
       response => {
         this.grids = response.data;
       },

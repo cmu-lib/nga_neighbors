@@ -4,7 +4,7 @@
     <p>
       At the National Gallery of Art Datathon, our team wanted to use the images of the artworks themselves as data, in concert with the curatorial metadata that the Gallery had provided us. Using our
       <a
-        href="/nga/about/#pipeline"
+        href="/about/#pipeline"
       >computer vision pipeline</a>, we were able to create gridded visualizations of selections of artwork images that arranged similar images closer to one another. It's worth taking a moment to understand how the visual similarity derived by Inception-v3 tracks with the formal qualities we'd usually associate with in art history, and how it operates differently.
     </p>
     <figure>

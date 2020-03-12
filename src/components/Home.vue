@@ -104,7 +104,7 @@ export default {
 
 <style>
 .jumbotron {
-  background-image: url("/nga/img/grid-sample.jpg");
+  background-image: url("/img/grid-sample.jpg");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */

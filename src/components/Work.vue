@@ -31,7 +31,7 @@
             <b-tooltip target="nn-tooltip-target" triggers="hover">
               These neighbors were generated based on neural-network-derived visual similarity. To learn more about that process, see the
               <a
-                href="/nga/about"
+                href="/about"
               >about page</a>
             </b-tooltip>
           </b-card-header>
@@ -63,7 +63,7 @@ export default {
   },
   asyncComputed: {
     work() {
-      return HTTP.get("/data/nga/work/" + this.id + ".json").then(
+      return HTTP.get("/data/work/" + this.id + ".json").then(
         response => {
           return response.data;
         },

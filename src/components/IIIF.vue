@@ -29,7 +29,7 @@ export default {
     options() {
       return {
         id: this.id,
-        prefixUrl: "/nga/osd/",
+        prefixUrl: "/osd/",
         tileSources: this.info_url
       };
     }

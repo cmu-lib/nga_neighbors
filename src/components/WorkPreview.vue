@@ -20,7 +20,7 @@ export default {
   },
   asyncComputed: {
     work() {
-      return HTTP.get("/data/nga/work/" + this.id + ".json").then(
+      return HTTP.get("/data/work/" + this.id + ".json").then(
         response => {
           return response.data;
         },
