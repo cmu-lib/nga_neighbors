@@ -53,7 +53,7 @@ export default {
     };
   },
   created() {
-    HTTP.get("/data/nga/manifest.json").then(
+    HTTP.get("/data/manifest.json").then(
       response => {
         this.works = response.data;
       },

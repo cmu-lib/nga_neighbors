@@ -4,8 +4,8 @@
     <p>
       Matthew Lincoln, Golan Levin, Sarah Reiff Conell, Lingdong Huang, (2019) "National Neighbors: Distant Viewing the National Gallery of Art's Collection of Collections", (November 2019)
       <a
-        href="https://dh-web.hss.cmu.edu/nga"
-      >https://dh-web.hss.cmu.edu/nga</a>
+        href="https://nga-neighbors.library.cmu.edu"
+      >https://nga-neighbors.library.cmu.edu</a>
     </p>
     <h2 id="team">Project Team</h2>
     <ul>

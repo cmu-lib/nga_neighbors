@@ -10,14 +10,14 @@
     "id": "prints_drawings",
     "title": "NGA and LoC Prints and Drawings",
     "iiif": "https://dh-web.hss.cmu.edu/iiif/prints_drawings",
-    "description": "<p>This visualization contains all of the photographed items from the National Gallery of Art's prints and drawings collections, as well as a selection of book illustrations taken from the <a href='https: //www.loc.gov/collections/lessing-j-rosenwald/'>Library of Congress' Rosenwald Collection.</a></p><p><a href='/nga/grid/prints_drawings_tinted'>See the version colored by collection</a></p>",
+    "description": "<p>This visualization contains all of the photographed items from the National Gallery of Art's prints and drawings collections, as well as a selection of book illustrations taken from the <a href='https: //www.loc.gov/collections/lessing-j-rosenwald/'>Library of Congress' Rosenwald Collection.</a></p><p><a href='/grid/prints_drawings_tinted'>See the version colored by collection</a></p>",
     "thumb": "https://dh-web.hss.cmu.edu/iiif/prints_drawings/full/599,/0/default.jpg"
   },
   {
     "id": "prints_drawings_tinted",
     "title": "NGA and LoC Prints and Drawings (Colorized)",
     "iiif": "https://dh-web.hss.cmu.edu/iiif/prints_drawings_tinted",
-    "description": "<p>This visualization contains all of the photographed items from the National Gallery of Art's prints and drawings collections, as well as a selection of book illustrations taken from the <a href='https://www.loc.gov/collections/lessing-j-rosenwald/'>Library of Congress' Rosenwald Collection.</a></p><p><a href='/nga/grid/prints_drawings'>See the un-colorized version</a></p>",
+    "description": "<p>This visualization contains all of the photographed items from the National Gallery of Art's prints and drawings collections, as well as a selection of book illustrations taken from the <a href='https://www.loc.gov/collections/lessing-j-rosenwald/'>Library of Congress' Rosenwald Collection.</a></p><p><a href='/grid/prints_drawings'>See the un-colorized version</a></p>",
     "thumb": "https://dh-web.hss.cmu.edu/iiif/prints_drawings_tinted/full/599,/0/default.jpg"
   },
   {
@@ -25,13 +25,13 @@
     "title": "NGA and Kress Collection Paintings",
     "iiif": "https://dh-web.hss.cmu.edu/iiif/kress_and_nga",
     "thumb": "https://dh-web.hss.cmu.edu/iiif/kress_and_nga/full/689,/0/default.jpg",
-    "description": "<p>This visualization contains all of the photographed paintings from the National Gallery of Art, as well as images of the catalogued paintings from the <a href='https://www.kressfoundation.org/collection/history/'>Kress Collection</a>.</p><p><a href='/nga/grid/kress_and_nga_tinted'>See the version colored by collection.</a>"
+    "description": "<p>This visualization contains all of the photographed paintings from the National Gallery of Art, as well as images of the catalogued paintings from the <a href='https://www.kressfoundation.org/collection/history/'>Kress Collection</a>.</p><p><a href='/grid/kress_and_nga_tinted'>See the version colored by collection.</a>"
   },
   {
     "id": "kress_and_nga_tinted",
     "title": "NGA and Kress Collection Paintings (Colorized)",
     "iiif": "https://dh-web.hss.cmu.edu/iiif/kress_and_nga_tinted",
     "thumb": "https://dh-web.hss.cmu.edu/iiif/kress_and_nga_tinted/full/689,/0/default.jpg",
-    "description": "<p>This visualization contains all of the photographed paintings from the National Gallery of Art, as well as images of the catalogued paintings from the <a href='https://www.kressfoundation.org/collection/history/'>Kress Collection</a>.</p><a href='/nga/grid/kress_and_nga'>See the un-colorized version.</a></p>"
+    "description": "<p>This visualization contains all of the photographed paintings from the National Gallery of Art, as well as images of the catalogued paintings from the <a href='https://www.kressfoundation.org/collection/history/'>Kress Collection</a>.</p><a href='/grid/kress_and_nga'>See the un-colorized version.</a></p>"
   }
 ]
