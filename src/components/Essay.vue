@@ -98,7 +98,6 @@
 </template>
 
 <script>
-import { base } from "../main";
 import IIIF from "./IIIF";
 export default {
   name: "Essay",
@@ -107,7 +106,7 @@ export default {
   },
   methods: {
     info_url(x) {
-      return base + "/iiif/" + x + "/info.json";
+      return "/iiif/" + x + "/info.json";
     }
   }
 };
