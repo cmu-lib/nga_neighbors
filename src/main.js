@@ -27,7 +27,7 @@ const routes = [
   { path: "/grid/:id", name: "GridView", component: Grid, props: (route) => ({ id: route.params.id }) }
 ]
 
-export const base = "https://dh-web.hss.cmu.edu/"
+export const base = process.env.PUBLIC_BASE
 export const public_base = process.env.PUBLIC_BASE
 
 const router = new VueRouter({
