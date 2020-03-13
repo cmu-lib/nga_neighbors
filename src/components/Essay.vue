@@ -50,7 +50,7 @@
         <span style="color:orange;">Orange tiles are Rosenwald paintings in the NGA.</span>
       </figcaption>
     </figure>
-    <p>The first major observation is that Kress paintings are disporportionately clustered around formal portraits and religious paintings, which confirms what we would expect to see knowing the collection's focus on Renaissance Italian painting. While Kress did collect some landscapes (scattered at the top of our visualization), it was not his priority. Also as we'd expect, modern abstract art sits like an unperturbed ocean in this layout.</p>
+    <p>The first major observation is that Kress paintings are disproportionately clustered around formal portraits and religious paintings, which confirms what we would expect to see knowing the collection's focus on Renaissance Italian painting. While Kress did collect some landscapes (scattered at the top of our visualization), it was not his priority. Also as we'd expect, modern abstract art sits like an unperturbed ocean in this layout.</p>
     <p>What we had no preconceived notion about, though, was whether the National Gallery's Kress paintings (highlighted in white in the visualization) would similarly be clustered in a corner. Was the Kress donation to the Gallery representative of Kress (focused predominantly on Italian devotional and figurative works) or did it attempt to more uniformly cover the visual space of art history available in Kress' larger collection, including landscapes and still lifes?</p>
     <p>
       What we see is that the white tiles are not randomly distributed amongst the Kress collection, which would end up with most of them falling in the lower left corner. Instead, they're
